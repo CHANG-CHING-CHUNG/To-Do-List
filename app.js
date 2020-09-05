@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       newChild.textContent = newText;
       parent.appendChild(newChild);
       const tasks = getTasksFromLocalStorage();
-      tasks[editingTextIndex] = newText;
+      tasks[editingTextIndex].title = newText;
       localStorage.setItem('tasks', JSON.stringify(tasks));
       e.target.classList.remove('editing');
       e.target.classList.add('edit-item');
@@ -342,7 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   function updateUrlWithParam(id) {
-    const currentUrl = "http://localhost/to-do-list/index.html";
+    // const currentUrl = "http://localhost/to-do-list/index.html";
+    const currentUrl = "http://mentor-program.co/mtr04group2/John/week12/hw2/index.html";
     const url = new URL(currentUrl);
     url.searchParams.set("id",id);
     const newURL = url.href;
